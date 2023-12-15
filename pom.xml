@@ -8,11 +8,11 @@
 		<version>3.2.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>smartsteps-back</artifactId>
+	<groupId>com.exemple</groupId>
+	<artifactId>smartsteps</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>smartsteps-back</name>
-	<description>backend do projeto Smartsteps</description>
+	<name>smartsteps</name>
+	<description>back end da Smart Steps</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
