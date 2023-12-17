@@ -4,6 +4,7 @@ import com.exemple.smartsteps.models.Estudante;
 
 import com.exemple.smartsteps.repositories.EstudanteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,6 +30,8 @@ public class EstudanteController {
     
     @PostMapping("/registrar")
     public String register(@RequestBody Estudante estudante) {
+        String encodedPassword = new BCryptPasswordEncoder().encode(estudante.getSenhaEstudante());
+        estudante.setSenhaEstudante(encodedPassword);
     	estudanteRepository.save(estudante);
         return "Registrado com sucesso";
     }

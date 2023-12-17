@@ -2,6 +2,7 @@ package com.exemple.smartsteps.models;
 
 
 import java.sql.Date;
+import java.util.Collection;
 
 
 import jakarta.persistence.Column;
@@ -11,9 +12,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
-public class Estudante{
+public class Estudante implements UserDetails {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -157,5 +160,40 @@ public class Estudante{
 		this.statusEstudante = statusEstudante;
 	}
 
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return null;
+	}
+
+	@Override
+	public String getPassword() {
+		return this.senhaEstudante;
+	}
+
+	@Override
+	public String getUsername() {
+		return this.emailEstudante;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
+	}
 }
 

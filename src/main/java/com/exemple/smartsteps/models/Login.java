@@ -9,8 +9,7 @@ import jakarta.persistence.Lob;
 
 @Entity
 public class Login {
-	
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
