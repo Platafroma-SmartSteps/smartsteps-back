@@ -10,15 +10,14 @@ public class Visita {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idVisita;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "id_professor")
     private Professor idProfessor;
 
     @Column(name = "data_hora")
     private Date dataHora;
 
-    @ManyToOne
-    @JoinColumn(name = "local")
+    @Column(name = "local")
     private String local;
 
     @ManyToOne
