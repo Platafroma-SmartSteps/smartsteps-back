@@ -11,6 +11,4 @@ public interface EstudanteRepository extends JpaRepository<Estudante, Long> {
     Optional<Estudante> findEstudanteByidEstudante(Long id);
 
     Estudante findEstudanteByEmailEstudante(String email);
-
-
 }

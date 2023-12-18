@@ -32,7 +32,7 @@ public class SecurityConfig {
         authenticationManagerBuilder.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder());
         AuthenticationManager authenticationManager = authenticationManagerBuilder.build();
 
-       httpSecurity.csrf().disable().authorizeHttpRequests().requestMatchers("/estudante/registrar").permitAll().anyRequest().authenticated().and().authenticationManager(authenticationManager).httpBasic();
+        httpSecurity.csrf().disable().authorizeHttpRequests().requestMatchers("/estudante/registrar").permitAll().anyRequest().authenticated().and().authenticationManager(authenticationManager).httpBasic();
         return httpSecurity.build();
     }
 
